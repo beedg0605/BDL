@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    color:#FFF;
+    margin:0;
+    padding:0;
+}
+body{
+    background-image: url('/static/Morning-version.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: all 1s ease-in;
+}
+:root{
+    --primary-color:#5bbcff;
+    --secondary-color:#fffab7;
+    
+}
+.night-mode{
+    background-image: url('/static/night_version.png');
+    --primary-color:#163968;
+    --secondary-color:#cfe2f0;
+}
+.nav-header{
+    overflow:hidden;
+    padding: 20px 0; 
+}
+.nav-wrapper{
+    max-width:100vw;
+    margin:0 auto;
+}
+.brand-logo h1 a{
+    text-decoration: none;
+}
+.contents{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-links ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin:0;
+    padding:0;
+    
+}
+.nav-links li{
+    margin: 0 20px;
+    cursor: pointer;
+    
+}
+.nav-links li a{
+    padding:10px 20px;
+    font-size: 20px;
+    text-decoration: none;
+    
+}
+.nav-links li a:hover{
+    background-color: var(--secondary-color);
+    transition: .5s ease;
+    color:var(--primary-color);
+    border-radius:5px;
+}
+.switch-mode-btn{
+    cursor: pointer;
+}
+
+.switch-mode-btn span img{
+    height:50px;
+}
+
+.contact-wrapper{
+    margin:125px 120px;
+    
+}
+.contact-heading,
+.contact-details{
+    margin:10px 0;   
+}
+.contact-details{
+    width:420px;
+}
+.contact-heading h1,
+.contact-details p{
+    font-family: "Itim", cursive;
+}
+.contact-heading h1{
+    font-size:2.5rem;
+    
+}
+.contact-details p{
+    font-size: 25px;
+}
+.contact-icon-container{
+    display:flex;
+    margin:35px 0;
+    
+}
+.contact-icon-links,
+.contact-icon-links-alt{
+    text-decoration: none;
+    
+}
+.contact-icon-links img,
+.contact-icon-links-alt img{
+    height:100%;
+    width:50px;
+    margin-right:10px;
+    border-radius: 10px;
+}
+.contact-icon-links img:hover,
+.contact-icon-links-alt img:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    transition: .5s ease;
+}
+.resume-btn-container{
+    margin:30px 0;
+    width:250px;
+    text-align: center;
+    height:50px;
+    
+}
+.btn-resume{
+    background-color: #FFFF;
+    color:#5bbcff;
+    width:100%;
+    height:100%;
+    font-size:20px;
+    font-weight: bold;
+    border:none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.btn-resume:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    border:solid #FFFF;
+    background-color: #163968;
+    color: #cfe2f0;
+    transition: .5s ease;
+}
+.open-menu, .close-menu{
+    display:none;
+    cursor:pointer;
+    font-size: 1.5rem;
+}
+.close-menu{
+    position:absolute;
+    top:30px;
+    right:60px;
+}
+#check {display: none;}
+@media(max-width:768px){
+    
+    .nav-links ul {
+        flex-direction: column;
+    }
+    .nav-links{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        transition: all 0.3s ease-in-out;
+    }
+    .nav-links li {margin-top: 40px;}
+    .nav-links li a {padding: 10px;}
+    .open-menu, .close-menu {display: block;}
+    #check:checked ~ .nav-links {right: 0;}
+}
+@media(max-width: 480px){
+    .nav-links li a{
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+    .contact-heading h1{
+        font-size: 2rem;
+    }
+    .contact-details p{
+        font-size: 18px;
+    }
+    
+    .contact-wrapper{
+        margin: 50px 20px;
+    }
+    
+    
+}
