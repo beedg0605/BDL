@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="icon" href="/static/brand-logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>BDL</title>
+    <link rel="stylesheet" href="{% static 'tech_stack.css' %}">
+</head>
+<body>
+    <div class="nav-header">
+        <div class="nav-wrapper">
+            <div class="contents">
+                <div class="brand-logo">
+                    <h1><a href="/">BDL</a></h1>
+                </div>
+                <input type="checkbox" id="check">
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="{% url 'tech_stack' %}">Skills</a></li>
+                        <li><a href="{% url 'project' %}">Project</a></li>
+                        <li><a href="{% url 'contact' %}">Contact Me</a></li>
+                        <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+                    </ul>
+                </div>
+                <div class="switch-mode-btn">
+                    <span>
+                        <img id="switcher" src="{% static 'sun.png' %}">
+                    </span>
+                </div>
+                <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="skills-container">
+            <div class="skills-wrapper">
+                <div class="skills-header">
+                    <h2>Languages</h2>
+                </div>
+                <div class="skills-showcase">
+                    <div class="skills-img">
+                        <img src="{% static 'python-logo.png' %}" >
+                        
+                        <p>Python Language</p>
+                    </div>
+                    <div class="skills-img">
+                        <img src="{% static 'html-logo.png' %}">
+                        <p>HTML Language</p>
+                    </div>
+                    <div class="skills-img">
+                        <img src="{% static 'css-logo.png' %}">
+                        <p>CSS Language</p>
+                    </div>
+                    <div class="skills-img">
+                        <img src="{% static 'c-.png' %}">
+                        <p>C++ Language</p>
+                    </div>
+                    <div class="skills-img">
+                        <img src="{% static 'linux.png' %}">
+                        <p>BASH Scripting</p>
+                    </div>
+                    <div class="skills-img">
+                        <img src="{% static 'PHP-logo.png' %}">
+                        <p>PHP Language</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="skills-container">
+            <div class="skills-wrapper">
+                <div class="skills-header">
+                    <h2>Databases</h2>
+                </div>
+                <div class="skills-showcase">
+                    <div class="skills-img">
+                        <img src="{% static 'Mysql_logo.png' %}">
+                        <p>MySQL</p>
+                    </div>
+                    <div class="skills-img">
+                        <img src="{% static 'ms-sql-logo.png' %}">
+                        <p>Microsoft SQL Server</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="skills-container">
+            <div class="skills-wrapper">
+                <div class="skills-header-1">
+                    <h2>Frameworks</h2>
+                </div>
+                <div class="skills-showcase">
+                    <div class="skills-img">
+                        <img src="{% static 'django-logo.png' %}">
+                        <p>Django</p>
+                    </div>
+                    <div class="skills-img">
+                        <img src="{%static 'flask-logo-icon.png' %}">
+                        <p>Flask</p>
+                    </div>
+                    <div class="skills-img">
+                        <img src="{% static 'bootstrap.png' %}">
+                        <p>Bootstrap</p>
+                    </div>
+                    <div class="skills-img">
+                        <img src="{%static 'laravel-logo.png'%}">
+                        <p>Laravel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        var moonIconPath = "{% static 'moon.png' %}";
+        var sunIconPath = "{% static 'sun.png' %}";
+        var icon = document.getElementById("switcher");
+        if (localStorage.getItem('night-mode') === 'enabled'){
+            document.body.classList.add('night-mode');
+            icon.src=moonIconPath;
+        }else{
+            icon.src=sunIconPath;
+        }
+        
+    
+        icon.onclick = function(){
+            document.body.classList.toggle("night-mode");
+            if(document.body.classList.contains("night-mode")){
+                localStorage.setItem('night-mode','enabled');
+                icon.src=moonIconPath;
+            }else{
+                localStorage.setItem('night-mode','disabled');
+                icon.src=sunIconPath;
+            }
+        }
+    </script>
+</body>
