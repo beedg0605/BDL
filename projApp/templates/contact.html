@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>BDL</title>
-    <link rel="stylesheet" href="{% static 'contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
 </head>
 <body>
     <div class="nav-header">
@@ -29,7 +29,7 @@
                 </div>
                 <div class="switch-mode-btn">
                     <span>
-                        <img id="switcher" src="{% static 'sun.png' %}">
+                        <img id="switcher" src="{% static 'images/sun.png' %}">
                     </span>
                 </div>
                 <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
@@ -47,27 +47,22 @@
                     <div class="contact-icon-container">
                         <div class="contact-icon-links">
                             <a href="https://www.linkedin.com/in/bealiongson/">
-                                <img src="{%static 'linkedin.png'%}">
-                            </a>
-                        </div>
-                        <div class="contact-icon-links">
-                            <a href="https://www.facebook.com/beatrix.liongson.7">
-                                <img src="{%static 'indeed-icon.png'%}">
+                                <img src="{%static 'images/linkedin.png'%}">
                             </a>
                         </div>
                         <div class="contact-icon-links-alt">
                             <a href="https://www.jobstreet.com.ph/profile/bea-liongson-RwjJrlPbnd">
-                                <img src="{%static 'jobstreet-icon.png'%}">
+                                <img src="{%static 'images/jobstreet-icon.png'%}">
                             </a>
                         </div>
                         <div class="contact-icon-links-alt">
                             <a href="https://github.com/beedg0605">
-                                <img src="{%static 'github.png'%}">
+                                <img src="{%static 'images/github.png'%}">
                             </a>
                         </div>
                     </div>
                     <div class="resume-btn-container">
-                        <a href="#" download="Resume">
+                        <a href="{% static 'supplementary/resume.docx' %}" download="Resume">
                             <button type="button" class="btn-resume">Resume</button>
                         </a>
                     </div>
@@ -76,8 +71,8 @@
         </div>
     </section>
     <script>
-        var moonIconPath = "{% static 'moon.png' %}";
-        var sunIconPath = "{% static 'sun.png' %}";
+        var moonIconPath = "{% static 'images/moon.png' %}";
+        var sunIconPath = "{% static 'images/sun.png' %}";
         var icon = document.getElementById("switcher");
         if (localStorage.getItem('night-mode') === 'enabled'){
             document.body.classList.add('night-mode');
@@ -86,7 +81,6 @@
             icon.src=sunIconPath;
         }
         
-    
         icon.onclick = function(){
             document.body.classList.toggle("night-mode");
             if(document.body.classList.contains("night-mode")){

@@ -6,7 +6,7 @@
     padding:0;
 }
 body{
-    background-image: url('/static/Morning-version.png');
+    background-image: url('/static/images/Morning-version.png');
     background-size:cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -18,7 +18,7 @@ body{
     
 }
 .night-mode{
-    background-image: url('/static/night_version.png');
+    background-image: url('/static/images/night_version.png');
     --primary-color:#163968;
     --secondary-color:#cfe2f0;
     
@@ -104,10 +104,13 @@ body{
     max-width: 450px;
     overflow: hidden;
     position: relative;
+    border:3px solid #424242;
     border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .proj-btn{
+    margin:10px 0;
     height:40px;
     width:120px;
     border-radius: 10px;
@@ -123,7 +126,10 @@ body{
     display: block;
     line-height: 40px;
 }
-
+.proj-btn:hover{
+    background-color: #163968;
+    transition:.5s ease;
+}
 .thumbnail-slideshow{
     border: 2px solid red;
     margin:20px 15px;
