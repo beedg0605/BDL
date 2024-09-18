@@ -66,6 +66,7 @@ body{
 }
 .switch-mode-btn{
     cursor: pointer;
+    margin-right:30px;
 }
 
 .switch-mode-btn span img{
